@@ -1,0 +1,27 @@
+name: ufs
+channels:
+        - conda-forge
+dependencies:
+        - python=3.7
+        - f90nml=1.1.2
+        - jinja2=2.11
+        - pyyaml=5.1.2
+        - scipy
+        - matplotlib
+        - scipy
+        - pint
+        - netcdf4
+        - jupyter
+        - jupyterlab
+        - xarray
+        - pandas
+        - pyproj
+        - cartopy<1.18
+        - metpy
+        - geopandas
+        - cfgrib
+        - pynio
+        - tqdm
+        - wrf-python
+        - sparse
+        - dask
