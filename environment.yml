@@ -16,8 +16,7 @@ dependencies:
         - xarray
         - pandas
         - pyproj
-        - cartopy<1.18
-        - metpy
+        - cartopy
         - geopandas
         - cfgrib
         - pynio
@@ -25,3 +24,9 @@ dependencies:
         - wrf-python
         - sparse
         - dask
+        - arm_pyart
+        - black
+        - isort
+        - pip
+        - pip:
+                git+https://github.com/jthielen/MetPy.git@edge

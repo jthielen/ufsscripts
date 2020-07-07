@@ -1,0 +1,3 @@
+upp_filepath_template: "{base_dir}{grid_subdir}HRRR.t{init_hr:02d}z.bg{collection}{f_hr:02d}.tm{init_hr:02d}"
+defaults:
+    base_dir: /home/jthielen/Downloads/ufs_sample/

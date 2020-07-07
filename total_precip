@@ -1,0 +1,104 @@
+#!/usr/bin/env python
+# Copyright (c) 2020 Jon Thielen.
+# Distributed under the terms of the Apache 2.0 License.
+# SPDX-License-Identifier: Apache-2.0
+"""
+Simple plot of total (from UPP grib files).
+-------------------------------------------
+
+"""
+
+from lib.grib import (
+    metpy_parse_variable,
+    open_datasets,
+    search_variable_unique
+)
+from lib.params import (
+    add_optional_argument,
+    add_required_argument,
+    config,
+    create_parser,
+    get_args
+)
+from lib.plots import (
+    add_boundaries,
+    cmaps,
+    set_extent_max_min_x_y,
+    single_panel_with_colorbar
+)
+from lib.vendor.xarray import _infer_interval_breaks
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+
+# Command line arguments
+parser = create_parser("Simple plot of total precipitation")
+add_required_argument(
+    parser,
+    "grid_subdir",
+    "g",
+    "Subdirectory for grid of interest",
+    "25km"
+)
+add_required_argument(
+    parser,
+    "init_hr",
+    "i",
+    "Initialization time for cycle",
+    "0"
+)
+add_required_argument(
+    parser,
+    "f_hr",
+    "f",
+    "Forecast hour",
+    "21"
+)
+add_optional_argument(
+    parser,
+    "base_dir",
+    "b",
+    "Base directory of files"
+)
+add_optional_argument(
+    parser,
+    "output",
+    "O",
+    "Output filename template",
+    "total_precip_{f_hr:02d}.png"
+)
+args = get_args(parser)
+
+# Get the data
+datasets = open_datasets(config["upp_filepath_template"], collection="dawp", **args)
+precip = metpy_parse_variable(search_variable_unique(
+    datasets,
+    attributes={"long_name": "Total Precipitation"}
+))
+
+# Create plot
+fig, ax, cax = single_panel_with_colorbar(
+    config=config,
+    projection=precip.metpy.cartopy_crs
+)
+x_b = _infer_interval_breaks(precip['x'])
+y_b = _infer_interval_breaks(precip['y'])
+pcm = ax.pcolormesh(
+    x_b,
+    y_b,
+    np.ma.masked_array(precip.data, precip.data <= 0.),
+    cmap=cmaps["precip"],
+    vmin=0,
+    vmax=precip.data.max(),
+    zorder=2
+)
+set_extent_max_min_x_y(ax, precip)
+add_boundaries(ax)
+cb = plt.colorbar(pcm, cax=cax, orientation="vertical")
+cb.set_label("Precip (kg m**-2)")
+ax.set_title(f"Total Precipitation\nForecast Hour: {args['f_hr']}")
+
+# Output plot
+plt.savefig("output/" + args["output"].format(**args), dpi=300, bbox_inches="tight")

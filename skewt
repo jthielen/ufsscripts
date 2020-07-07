@@ -1,0 +1,183 @@
+#!/usr/bin/env python
+# Copyright (c) 2020 Jon Thielen.
+# Distributed under the terms of the Apache 2.0 License.
+# SPDX-License-Identifier: Apache-2.0
+"""
+Create Skew-T with parameters.
+------------------------------
+"""
+
+from lib.grib import (
+    metpy_parse_variable,
+    open_datasets,
+    search_dataset_all
+)
+from lib.params import (
+    add_optional_argument,
+    add_required_argument,
+    config,
+    create_parser,
+    get_args
+)
+
+import cartopy.crs as ccrs
+
+import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
+
+import metpy.calc as mpcalc
+from metpy.plots import Hodograph, SkewT
+from metpy.units import units
+
+
+# Command line arguments
+parser = create_parser("Skew-T of Atmospheric Profile")
+add_required_argument(
+    parser,
+    "lon",
+    "x",
+    "Longitude of point (degreesE)",
+    "-99.97"
+)
+add_required_argument(
+    parser,
+    "lat",
+    "y",
+    "Latitude of point (degreesN)",
+    "37.77"
+)
+add_required_argument(
+    parser,
+    "grid_subdir",
+    "g",
+    "Subdirectory for grid of interest",
+    "25km"
+)
+add_required_argument(
+    parser,
+    "init_hr",
+    "i",
+    "Initialization time for cycle",
+    "0"
+)
+add_required_argument(
+    parser,
+    "f_hr",
+    "f",
+    "Forecast hour",
+    "21"
+)
+add_optional_argument(
+    parser,
+    "base_dir",
+    "b",
+    "Base directory of files"
+)
+add_optional_argument(
+    parser,
+    "output",
+    "O",
+    "Output filename template",
+    "skewt_{lat}_{lon}_{f_hr:02d}.png"
+)
+args = get_args(parser)
+
+# Get the data
+datasets = open_datasets(config["upp_filepath_template"], collection="dawp", **args)
+ds = [ds for ds in search_dataset_all(datasets, coords=['isobaric.*']) if 'u' in ds.data_vars][0]
+temp = metpy_parse_variable(ds['t'])
+ds = ds.assign_coords(crs=temp['crs'], y=temp['y'], x=temp['x'])
+
+# Interpolate to nearest profile
+x, y = ds['t'].metpy.cartopy_crs.transform_point(args['lon'], args['lat'], ccrs.PlateCarree())
+profile = ds.interp(x=x, y=y, method='nearest')
+
+# Prepare variables for plotting
+p = profile['t'].metpy.vertical.metpy.unit_array.to('hPa')
+T = profile['t'].metpy.unit_array.to('degC')
+Td = mpcalc.dewpoint_from_specific_humidity(p, T, profile['q'])
+u = profile['u'].metpy.unit_array.to('knots')
+v = profile['v'].metpy.unit_array.to('knots')
+
+# Create a new figure. The dimensions here give a good aspect ratio
+fig = plt.figure(figsize=config['skewt']['figsize'])
+
+# Grid for plots
+gs = gridspec.GridSpec(3, 3)
+skew = SkewT(fig, rotation=config['skewt']['rotation'], subplot=gs[:, :2])
+
+# Plot the data using normal plotting functions, in this case using
+# log scaling in Y, as dictated by the typical meteorological plot
+skew.plot(p, T, 'r')
+skew.plot(p, Td, 'g')
+skew.plot_barbs(p, u, v)
+skew.ax.set_ylim(config['skewt']['p_max'], config['skewt']['p_min'])
+
+# Add LCL, parcel profile and CAPE/CIN
+lcl_pressure, lcl_temperature = mpcalc.lcl(p[0], T[0], Td[0])
+skew.plot(lcl_pressure, lcl_temperature, 'ko', markerfacecolor='black')
+prof = mpcalc.parcel_profile(p, T[0], Td[0]).to('degC')
+skew.plot(p, prof, 'k', linewidth=2)
+skew.shade_cin(p, T, prof)
+skew.shade_cape(p, T, prof)
+
+# An example of a slanted line at constant T -- in this case the 0
+# isotherm
+skew.ax.axvline(0, color='c', linestyle='--', linewidth=2)
+
+# Add the relevant special lines
+skew.plot_dry_adiabats()
+skew.plot_moist_adiabats()
+skew.plot_mixing_lines()
+
+# Good bounds for aspect ratio
+skew.ax.set_xlim(-30, 40)
+
+# Title
+skew.ax.set_title(f"Lat: {args['lat']}, Lon: {args['lon']}\nForecast Hour: {args['f_hr']}")
+
+# Create a hodograph
+ax = fig.add_subplot(gs[0, -1])
+h = Hodograph(ax, component_range=config['skewt']['ws_range'])
+h.add_grid(increment=20)
+h.plot(u, v)
+ax.set_ylabel(None)
+
+# Text of params
+sbcape, sbcin = mpcalc.cape_cin(p, T, Td, prof)
+mlcape, mlcin = mpcalc.mixed_layer_cape_cin(p, T, Td)
+(storm_u, storm_v), _, _ = mpcalc.bunkers_storm_motion(p, u, v, profile['gh'])
+_, _, srh = mpcalc.storm_relative_helicity(profile['gh'], u, v, depth=6 * units.km, storm_u=storm_u, storm_v=storm_v)
+txt = "Parameters:\n-----------\n"
+row = "{var}: {val:8.3f} {unit}\n"
+txt += row.format(
+    var="SBCAPE",
+    val=sbcape.m_as('J/kg'),
+    unit='J/kg'
+)
+txt += row.format(
+    var="SBCIN",
+    val=sbcin.m_as('J/kg'),
+    unit='J/kg'
+)
+txt += row.format(
+    var="MLCAPE",
+    val=mlcape.m_as('J/kg'),
+    unit='J/kg'
+)
+txt += row.format(
+    var="MLCIN",
+    val=mlcin.m_as('J/kg'),
+    unit='J/kg'
+)
+txt += row.format(
+    var="SRH",
+    val=srh.m_as('m**2/s**2'),
+    unit='m**2/s**2'
+)
+tax = fig.add_subplot(gs[1:, -1])
+tax.text(0, 0.95, txt, fontsize=12, fontfamily='monospace', verticalalignment='top')
+tax.axis('off')
+
+# Output plot
+plt.savefig("output/" + args["output"].format(**args), dpi=300, bbox_inches="tight")

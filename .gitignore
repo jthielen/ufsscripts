@@ -22,3 +22,5 @@ MANIFEST
 
 # Ignore the set configuration file
 config.yml
+
+output/*.png

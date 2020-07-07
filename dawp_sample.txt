@@ -1,0 +1,1517 @@
+Dataset 0
+
+Coordinates:
+    time                   datetime64[ns] 2019-06-15
+    step                   timedelta64[ns] 21:00:00
+    adiabaticCondensation  int64 0
+    latitude               (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude              (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time             datetime64[ns] 2019-06-15T21:00:00
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+----
+
+Dataset 1
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    cloudBase   int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+----
+
+Dataset 2
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    cloudTop    int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+t ('y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+vis ('y', 'x')
+	long_name: Visibility
+	units: m
+
+----
+
+Dataset 3
+
+Coordinates:
+    time            datetime64[ns] 2019-06-15
+    step            timedelta64[ns] 21:00:00
+    depthBelowLand  int64 3
+    latitude        (y, x) float64 ...
+    longitude       (y, x) float64 ...
+    valid_time      datetime64[ns] ...
+
+st ('y', 'x')
+	long_name: Soil Temperature
+	units: K
+
+----
+
+Dataset 4
+
+Coordinates:
+    time                 datetime64[ns] 2019-06-15
+    step                 timedelta64[ns] 21:00:00
+    depthBelowLandLayer  int64 0
+    latitude             (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude            (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time           datetime64[ns] 2019-06-15T21:00:00
+
+sm ('y', 'x')
+	long_name: Soil Moisture
+	units: kg m**-3
+
+mstav ('y', 'x')
+	long_name: Moisture availability
+	units: %
+
+----
+
+Dataset 5
+
+Coordinates:
+    time                 datetime64[ns] 2019-06-15
+    step                 timedelta64[ns] 21:00:00
+  * depthBelowLandLayer  (depthBelowLandLayer) int64 0 1
+    latitude             (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude            (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time           datetime64[ns] 2019-06-15T21:00:00
+
+st ('depthBelowLandLayer', 'y', 'x')
+	long_name: Soil Temperature
+	units: K
+
+soilw ('depthBelowLandLayer', 'y', 'x')
+	long_name: Volumetric soil moisture content
+	units: Proportion
+
+soill ('depthBelowLandLayer', 'y', 'x')
+	long_name: Liquid volumetric soil moisture (non-frozen)
+	units: Proportion
+
+----
+
+Dataset 6
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+  * heightAboveGround  (heightAboveGround) int64 10 1000
+    latitude           (y, x) float64 ...
+    longitude          (y, x) float64 ...
+    valid_time         datetime64[ns] ...
+
+paramId_0 ('heightAboveGround', 'y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+----
+
+Dataset 7
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+    heightAboveGround  int64 10
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+pt ('y', 'x')
+	long_name: Potential temperature
+	units: K
+
+u10 ('y', 'x')
+	long_name: 10 metre U wind component
+	units: m s**-1
+	standard_name: eastward_wind
+
+v10 ('y', 'x')
+	long_name: 10 metre V wind component
+	units: m s**-1
+	standard_name: northward_wind
+
+si10 ('y', 'x')
+	long_name: 10 metre wind speed
+	units: m s**-1
+
+----
+
+Dataset 8
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+  * heightAboveGround  (heightAboveGround) int64 30 50 80 100
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+pres ('heightAboveGround', 'y', 'x')
+	long_name: Pressure
+	units: Pa
+
+t ('heightAboveGround', 'y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+----
+
+Dataset 9
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+  * heightAboveGround  (heightAboveGround) int64 30 50 80
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+u ('heightAboveGround', 'y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('heightAboveGround', 'y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+----
+
+Dataset 10
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+  * heightAboveGround  (heightAboveGround) int64 2 10 30 50 80 100
+    latitude           (y, x) float64 ...
+    longitude          (y, x) float64 ...
+    valid_time         datetime64[ns] ...
+
+q ('heightAboveGround', 'y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+----
+
+Dataset 11
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+    heightAboveGround  int64 2
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+t2m ('y', 'x')
+	long_name: 2 metre temperature
+	units: K
+	standard_name: air_temperature
+
+d2m ('y', 'x')
+	long_name: 2 metre dewpoint temperature
+	units: K
+
+tmax ('y', 'x')
+	long_name: Maximum temperature
+	units: K
+
+tmin ('y', 'x')
+	long_name: Minimum temperature
+	units: K
+
+maxrh ('y', 'x')
+	long_name: Maximum relative humidity
+	units: %
+
+r2 ('y', 'x')
+	long_name: 2 metre relative humidity
+	units: %
+	standard_name: relative_humidity
+
+minrh ('y', 'x')
+	long_name: Minimum Relative Humidity
+	units: %
+
+----
+
+Dataset 12
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+    heightAboveGround  int64 100
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+u100 ('y', 'x')
+	long_name: 100 metre U wind component
+	units: m s**-1
+	standard_name: eastward_wind
+
+v100 ('y', 'x')
+	long_name: 100 metre V wind component
+	units: m s**-1
+	standard_name: northward_wind
+
+----
+
+Dataset 13
+
+Coordinates:
+    time               datetime64[ns] 2019-06-15
+    step               timedelta64[ns] 21:00:00
+  * heightAboveGround  (heightAboveGround) int64 1000 4000
+    latitude           (y, x) float64 25.12 25.17 25.22 ... 45.8 45.73 45.65
+    longitude          (y, x) float64 239.3 239.5 239.7 ... 292.8 293.1 293.4
+    valid_time         datetime64[ns] 2019-06-15T21:00:00
+
+refzr ('heightAboveGround', 'y', 'x')
+	long_name: Derived radar reflectivity backscatter from rain
+	units: mm**6 m**-3
+
+refzi ('heightAboveGround', 'y', 'x')
+	long_name: Derived radar reflectivity backscatter from ice
+	units: mm**6 m**-3
+
+refd ('heightAboveGround', 'y', 'x')
+	long_name: Derived radar reflectivity
+	units: dB
+
+----
+
+Dataset 14
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+  * heightAboveGroundLayer  (heightAboveGroundLayer) int64 3000 5000
+    latitude                (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude               (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time              datetime64[ns] 2019-06-15T21:00:00
+
+paramId_0 ('heightAboveGroundLayer', 'y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+----
+
+Dataset 15
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+  * heightAboveGroundLayer  (heightAboveGroundLayer) int64 1000 2000
+    latitude                (y, x) float64 ...
+    longitude               (y, x) float64 ...
+    valid_time              datetime64[ns] ...
+
+vo ('heightAboveGroundLayer', 'y', 'x')
+	long_name: Vorticity (relative)
+	units: s**-1
+	standard_name: atmosphere_relative_vorticity
+
+----
+
+Dataset 16
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+    heightAboveGroundLayer  int64 0
+    latitude                (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude               (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time              datetime64[ns] 2019-06-15T21:00:00
+
+vucsh ('y', 'x')
+	long_name: Vertical u-component shear
+	units: s**-1
+
+vvcsh ('y', 'x')
+	long_name: Vertical v-component shear
+	units: s**-1
+
+----
+
+Dataset 17
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+    heightAboveGroundLayer  int64 6000
+    latitude                (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude               (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time              datetime64[ns] 2019-06-15T21:00:00
+
+ustm ('y', 'x')
+	long_name: U-component storm motion
+	units: m s**-1
+
+vstm ('y', 'x')
+	long_name: V-component storm motion
+	units: m s**-1
+
+----
+
+Dataset 18
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+  * heightAboveGroundLayer  (heightAboveGroundLayer) int64 1000 3000
+    latitude                (y, x) float64 ...
+    longitude               (y, x) float64 ...
+    valid_time              datetime64[ns] ...
+
+hlcy ('heightAboveGroundLayer', 'y', 'x')
+	long_name: Storm relative helicity
+	units: J kg**-1
+
+----
+
+Dataset 19
+
+Coordinates:
+    time                    datetime64[ns] 2019-06-15
+    step                    timedelta64[ns] 21:00:00
+    heightAboveGroundLayer  int64 5000
+    latitude                (y, x) float64 ...
+    longitude               (y, x) float64 ...
+    valid_time              datetime64[ns] ...
+
+uphl ('y', 'x')
+	long_name: Updraft Helicity
+	units: m**2 s**-2
+
+----
+
+Dataset 20
+
+Coordinates:
+    time            datetime64[ns] 2019-06-15
+    step            timedelta64[ns] 21:00:00
+  * heightAboveSea  (heightAboveSea) int64 457 610 914 1524 ... 2743 3658 4572
+    latitude        (y, x) float64 ...
+    longitude       (y, x) float64 ...
+    valid_time      datetime64[ns] ...
+
+t ('heightAboveSea', 'y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+----
+
+Dataset 21
+
+Coordinates:
+    time            datetime64[ns] 2019-06-15
+    step            timedelta64[ns] 21:00:00
+  * heightAboveSea  (heightAboveSea) int64 305 457 610 914 ... 2743 3658 4572
+    latitude        (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude       (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time      datetime64[ns] 2019-06-15T21:00:00
+
+u ('heightAboveSea', 'y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('heightAboveSea', 'y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+----
+
+Dataset 22
+
+Coordinates:
+    time            datetime64[ns] 2019-06-15
+    step            timedelta64[ns] 21:00:00
+    heightAboveSea  int64 305
+    latitude        (y, x) float64 ...
+    longitude       (y, x) float64 ...
+    valid_time      datetime64[ns] ...
+
+q ('y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+----
+
+Dataset 23
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+  * hybrid      (hybrid) int64 1 2
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pt ('hybrid', 'y', 'x')
+	long_name: Potential temperature
+	units: K
+
+pres ('hybrid', 'y', 'x')
+	long_name: Pressure
+	units: Pa
+
+t ('hybrid', 'y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+u ('hybrid', 'y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('hybrid', 'y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+gh ('hybrid', 'y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+dpt ('hybrid', 'y', 'x')
+	long_name: Dew point temperature
+	units: K
+
+tcc ('hybrid', 'y', 'x')
+	long_name: Total Cloud Cover
+	units: %
+
+tcond ('hybrid', 'y', 'x')
+	long_name: Condensate
+	units: kg kg**-1
+
+clwmr ('hybrid', 'y', 'x')
+	long_name: Cloud mixing ratio
+	units: kg kg**-1
+
+icmr ('hybrid', 'y', 'x')
+	long_name: Ice water mixing ratio
+	units: kg kg**-1
+
+rwmr ('hybrid', 'y', 'x')
+	long_name: Rain mixing ratio
+	units: kg kg**-1
+
+snmr ('hybrid', 'y', 'x')
+	long_name: Snow mixing ratio
+	units: kg kg**-1
+
+rime ('hybrid', 'y', 'x')
+	long_name: Rime factor
+	units: Numeric
+
+tke ('hybrid', 'y', 'x')
+	long_name: Turbulent kinetic energy
+	units: J kg**-1
+
+refd ('hybrid', 'y', 'x')
+	long_name: Derived radar reflectivity
+	units: dB
+
+----
+
+Dataset 24
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    hybrid      int64 1
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+q ('y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+w ('y', 'x')
+	long_name: Vertical velocity
+	units: Pa s**-1
+	standard_name: lagrangian_tendency_of_air_pressure
+
+vo ('y', 'x')
+	long_name: Vorticity (relative)
+	units: s**-1
+	standard_name: atmosphere_relative_vorticity
+
+r ('y', 'x')
+	long_name: Relative humidity
+	units: %
+	standard_name: relative_humidity
+
+grle ('y', 'x')
+	long_name: Graupel (snow pellets)
+	units: kg kg**-1
+
+fco2gpp ('y', 'x')
+	long_name: Blackadar mixing length scale
+	units: m
+
+wz ('y', 'x')
+	long_name: Geometric vertical velocity
+	units: m s**-1
+
+----
+
+Dataset 25
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+  * isobaricInhPa  (isobaricInhPa) int64 500 250
+    latitude       (y, x) float64 ...
+    longitude      (y, x) float64 ...
+    valid_time     datetime64[ns] ...
+
+strf ('isobaricInhPa', 'y', 'x')
+	long_name: Stream function
+	units: m**2 s**-1
+
+----
+
+Dataset 26
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+  * isobaricInhPa  (isobaricInhPa) int64 1000 975 950 925 900 ... 20 10 7 5 2
+    latitude       (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude      (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time     datetime64[ns] 2019-06-15T21:00:00
+
+t ('isobaricInhPa', 'y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+u ('isobaricInhPa', 'y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('isobaricInhPa', 'y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+q ('isobaricInhPa', 'y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+w ('isobaricInhPa', 'y', 'x')
+	long_name: Vertical velocity
+	units: Pa s**-1
+	standard_name: lagrangian_tendency_of_air_pressure
+
+gh ('isobaricInhPa', 'y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+r ('isobaricInhPa', 'y', 'x')
+	long_name: Relative humidity
+	units: %
+	standard_name: relative_humidity
+
+dpt ('isobaricInhPa', 'y', 'x')
+	long_name: Dew point temperature
+	units: K
+
+clwmr ('isobaricInhPa', 'y', 'x')
+	long_name: Cloud mixing ratio
+	units: kg kg**-1
+
+icmr ('isobaricInhPa', 'y', 'x')
+	long_name: Ice water mixing ratio
+	units: kg kg**-1
+
+rwmr ('isobaricInhPa', 'y', 'x')
+	long_name: Rain mixing ratio
+	units: kg kg**-1
+
+snmr ('isobaricInhPa', 'y', 'x')
+	long_name: Snow mixing ratio
+	units: kg kg**-1
+
+rime ('isobaricInhPa', 'y', 'x')
+	long_name: Rime factor
+	units: Numeric
+
+tke ('isobaricInhPa', 'y', 'x')
+	long_name: Turbulent kinetic energy
+	units: J kg**-1
+
+wz ('isobaricInhPa', 'y', 'x')
+	long_name: Geometric vertical velocity
+	units: m s**-1
+
+----
+
+Dataset 27
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+  * isobaricInhPa  (isobaricInhPa) int64 1000 925 850 750 ... 400 300 250 200
+    latitude       (y, x) float64 ...
+    longitude      (y, x) float64 ...
+    valid_time     datetime64[ns] ...
+
+absv ('isobaricInhPa', 'y', 'x')
+	long_name: Absolute vorticity
+	units: s**-1
+
+----
+
+Dataset 28
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+  * isobaricInhPa  (isobaricInhPa) int64 950 850
+    latitude       (y, x) float64 ...
+    longitude      (y, x) float64 ...
+    valid_time     datetime64[ns] ...
+
+mconv ('isobaricInhPa', 'y', 'x')
+	long_name: Horizontal moisture convergence
+	units: kg kg**-1 s**-1
+
+----
+
+Dataset 29
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+    isobaricLayer  int64 100
+    latitude       (y, x) float64 ...
+    longitude      (y, x) float64 ...
+    valid_time     datetime64[ns] ...
+
+paramId_0 ('y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+----
+
+Dataset 30
+
+Coordinates:
+    time           datetime64[ns] 2019-06-15
+    step           timedelta64[ns] 21:00:00
+    isobaricLayer  int64 500
+    latitude       (y, x) float64 ...
+    longitude      (y, x) float64 ...
+    valid_time     datetime64[ns] ...
+
+lftx ('y', 'x')
+	long_name: Surface lifted index
+	units: K
+
+----
+
+Dataset 31
+
+Coordinates:
+    time          datetime64[ns] 2019-06-15
+    step          timedelta64[ns] 21:00:00
+    isothermZero  int64 0
+    latitude      (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude     (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time    datetime64[ns] 2019-06-15T21:00:00
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+r ('y', 'x')
+	long_name: Relative humidity
+	units: %
+	standard_name: relative_humidity
+
+----
+
+Dataset 32
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    isothermal  int64 263
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+paramId_0 ('y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+refd ('y', 'x')
+	long_name: Derived radar reflectivity
+	units: dB
+
+----
+
+Dataset 33
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    maxWind     int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+u ('y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+----
+
+Dataset 34
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    meanSea     int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+prmsl ('y', 'x')
+	long_name: Pressure reduced to MSL
+	units: Pa
+
+mslet ('y', 'x')
+	long_name: MSLP (Eta model reduction)
+	units: Pa
+
+----
+
+Dataset 35
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    nominalTop  int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+btmp ('y', 'x')
+	long_name: Brightness temperature
+	units: K
+
+uswrf ('y', 'x')
+	long_name: Upward short-wave radiation flux
+	units: W m**-2
+
+ulwrf ('y', 'x')
+	long_name: Upward long-wave radiation flux
+	units: W m**-2
+
+----
+
+Dataset 36
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+    pressureFromGroundLayer  int64 3000
+    latitude                 (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude                (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time               datetime64[ns] 2019-06-15T21:00:00
+
+pt ('y', 'x')
+	long_name: Potential temperature
+	units: K
+
+dpt ('y', 'x')
+	long_name: Dew point temperature
+	units: K
+
+pli ('y', 'x')
+	long_name: Parcel lifted index (to 500 hPa)
+	units: K
+
+pwat ('y', 'x')
+	long_name: Precipitable water
+	units: kg m**-2
+
+mconv ('y', 'x')
+	long_name: Horizontal moisture convergence
+	units: kg kg**-1 s**-1
+
+----
+
+Dataset 37
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+  * pressureFromGroundLayer  (pressureFromGroundLayer) int64 3000 6000 ... 18000
+    latitude                 (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude                (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time               datetime64[ns] 2019-06-15T21:00:00
+
+pres ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Pressure
+	units: Pa
+
+t ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+u ('pressureFromGroundLayer', 'y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('pressureFromGroundLayer', 'y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+q ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+r ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Relative humidity
+	units: %
+	standard_name: relative_humidity
+
+----
+
+Dataset 38
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+  * pressureFromGroundLayer  (pressureFromGroundLayer) int64 9000 18000 25500
+    latitude                 (y, x) float64 25.12 25.17 25.22 ... 45.73 45.65
+    longitude                (y, x) float64 239.3 239.5 239.7 ... 293.1 293.4
+    valid_time               datetime64[ns] 2019-06-15T21:00:00
+
+cape ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Convective available potential energy
+	units: J kg**-1
+
+cin ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Convective inhibition
+	units: J kg**-1
+
+----
+
+Dataset 39
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+  * pressureFromGroundLayer  (pressureFromGroundLayer) int64 3000 9000 18000
+    latitude                 (y, x) float64 ...
+    longitude                (y, x) float64 ...
+    valid_time               datetime64[ns] ...
+
+w ('pressureFromGroundLayer', 'y', 'x')
+	long_name: Vertical velocity
+	units: Pa s**-1
+	standard_name: lagrangian_tendency_of_air_pressure
+
+----
+
+Dataset 40
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+    pressureFromGroundLayer  int64 18000
+    latitude                 (y, x) float64 ...
+    longitude                (y, x) float64 ...
+    valid_time               datetime64[ns] ...
+
+4lftx ('y', 'x')
+	long_name: Best (4-layer) lifted index
+	units: K
+
+----
+
+Dataset 41
+
+Coordinates:
+    time                     datetime64[ns] 2019-06-15
+    step                     timedelta64[ns] 21:00:00
+    pressureFromGroundLayer  int64 25500
+    latitude                 (y, x) float64 ...
+    longitude                (y, x) float64 ...
+    valid_time               datetime64[ns] ...
+
+plpl ('y', 'x')
+	long_name: Pressure of level from which parcel was lifted
+	units: Pa
+
+----
+
+Dataset 42
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    sigma       int64 1
+    latitude    (y, x) float64 ...
+    longitude   (y, x) float64 ...
+    valid_time  datetime64[ns] ...
+
+t ('y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+----
+
+Dataset 43
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    surface     int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+paramId_0 ('y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+pt ('y', 'x')
+	long_name: Potential temperature
+	units: K
+
+siconc ('y', 'x')
+	long_name: Sea ice area fraction
+	units: (0 - 1)
+	standard_name: sea_ice_area_fraction
+
+sst ('y', 'x')
+	long_name: Sea surface temperature
+	units: K
+
+slt ('y', 'x')
+	long_name: Soil type
+	units: ~
+
+cape ('y', 'x')
+	long_name: Convective available potential energy
+	units: J kg**-1
+
+t ('y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+q ('y', 'x')
+	long_name: Specific humidity
+	units: kg kg**-1
+	standard_name: specific_humidity
+
+sp ('y', 'x')
+	long_name: Surface pressure
+	units: Pa
+	standard_name: surface_air_pressure
+
+lsm ('y', 'x')
+	long_name: Land-sea mask
+	units: (0 - 1)
+	standard_name: land_binary_mask
+
+sr ('y', 'x')
+	long_name: Surface roughness
+	units: m
+	standard_name: surface_roughness_length
+
+vis ('y', 'x')
+	long_name: Visibility
+	units: m
+
+prate ('y', 'x')
+	long_name: Precipitation rate
+	units: kg m**-2 s**-1
+
+sde ('y', 'x')
+	long_name: Snow depth
+	units: m
+	standard_name: lwe_thickness_of_surface_snow_amount
+
+snom ('y', 'x')
+	long_name: Snow melt
+	units: kg m**-2
+
+cin ('y', 'x')
+	long_name: Convective inhibition
+	units: J kg**-1
+
+orog ('y', 'x')
+	long_name: Orography
+	units: m
+	standard_name: geopotential_height
+
+tp ('y', 'x')
+	long_name: Total Precipitation
+	units: kg m**-2
+
+lhtfl ('y', 'x')
+	long_name: Latent heat net flux
+	units: W m**-2
+
+shtfl ('y', 'x')
+	long_name: Sensible heat net flux
+	units: W m**-2
+
+snohf ('y', 'x')
+	long_name: Snow phase change heat flux
+	units: W m**-2
+
+ncpcp ('y', 'x')
+	long_name: Large scale precipitation (non-convective)
+	units: kg m**-2
+
+crain ('y', 'x')
+	long_name: Categorical rain
+	units: (Code table 4.222)
+
+cfrzr ('y', 'x')
+	long_name: Categorical freezing rain
+	units: (Code table 4.222)
+
+cicep ('y', 'x')
+	long_name: Categorical ice pellets
+	units: (Code table 4.222)
+
+csnow ('y', 'x')
+	long_name: Categorical snow
+	units: (Code table 4.222)
+
+cpofp ('y', 'x')
+	long_name: Percent frozen precipitation
+	units: %
+
+pevap ('y', 'x')
+	long_name: Potential evaporation
+	units: kg m**-2
+
+snowc ('y', 'x')
+	long_name: Snow cover
+	units: %
+
+sdwe ('y', 'x')
+	long_name: Water equivalent of accumulated snow depth (deprecated)
+	units: kg m**-2
+
+uflx ('y', 'x')
+	long_name: Momentum flux, u component
+	units: N m**-2
+
+vflx ('y', 'x')
+	long_name: Momentum flux, v component
+	units: N m**-2
+
+gust ('y', 'x')
+	long_name: Wind speed (gust)
+	units: m s**-1
+
+cd ('y', 'x')
+	long_name: Drag coefficient
+	units: Numeric
+
+fricv ('y', 'x')
+	long_name: Frictional velocity
+	units: m s**-1
+
+hpbl ('y', 'x')
+	long_name: Planetary boundary layer height
+	units: m
+
+dswrf ('y', 'x')
+	long_name: Downward short-wave radiation flux
+	units: W m**-2
+
+uswrf ('y', 'x')
+	long_name: Upward short-wave radiation flux
+	units: W m**-2
+
+dlwrf ('y', 'x')
+	long_name: Downward long-wave radiation flux
+	units: W m**-2
+
+ulwrf ('y', 'x')
+	long_name: Upward long-wave radiation flux
+	units: W m**-2
+
+pblreg ('y', 'x')
+	long_name: Planetary boundary layer regime
+	units: code table (4.209)
+
+mxsalb ('y', 'x')
+	long_name: Maximum snow albedo
+	units: %
+
+snfalb ('y', 'x')
+	long_name: Snow free albedo
+	units: %
+
+bgrun ('y', 'x')
+	long_name: Baseflow-groundwater runoff
+	units: kg m**-2
+
+ssrun ('y', 'x')
+	long_name: Storm surface runoff
+	units: kg m**-2
+
+veg ('y', 'x')
+	long_name: Vegetation
+	units: %
+
+watr ('y', 'x')
+	long_name: Water runoff
+	units: kg m**-2
+
+gflux ('y', 'x')
+	long_name: Ground heat flux
+	units: W m**-2
+
+fco2nee ('y', 'x')
+	long_name: Exchange coefficient
+	units: kg m**-2 s**-1
+
+fco2rec ('y', 'x')
+	long_name: Plant canopy surface water
+	units: kg m**-2
+
+smdry ('y', 'x')
+	long_name: Direct evaporation cease (soil moisture)
+	units: Proportion
+
+poros ('y', 'x')
+	long_name: Soil porosity
+	units: Proportion
+
+hindex ('y', 'x')
+	long_name: Haines Index
+	units: Numeric
+
+csdsf ('y', 'x')
+	long_name: Clear Sky Downward Solar Flux
+	units: W m**-2
+
+ltng ('y', 'x')
+	long_name: Lightning
+	units: dimensionless
+
+nlat ('y', 'x')
+	long_name: Latitude (-90 to +90)
+	units: deg
+
+elon ('y', 'x')
+	long_name: East Longitude (0 - 360)
+	units: deg
+
+gppbfas ('y', 'x')
+	long_name: Vegetation Type
+	units: Integer(0-13)
+
+lspa ('y', 'x')
+	long_name: Land Surface Precipitation Accumulation
+	units: kg m**-2
+
+al ('y', 'x')
+	long_name: Albedo
+	units: %
+
+----
+
+Dataset 44
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    surface     int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+lhtfl ('y', 'x')
+	long_name: Latent heat net flux
+	units: W m**-2
+
+shtfl ('y', 'x')
+	long_name: Sensible heat net flux
+	units: W m**-2
+
+dswrf ('y', 'x')
+	long_name: Downward short-wave radiation flux
+	units: W m**-2
+
+uswrf ('y', 'x')
+	long_name: Upward short-wave radiation flux
+	units: W m**-2
+
+dlwrf ('y', 'x')
+	long_name: Downward long-wave radiation flux
+	units: W m**-2
+
+ulwrf ('y', 'x')
+	long_name: Upward long-wave radiation flux
+	units: W m**-2
+
+gflux ('y', 'x')
+	long_name: Ground heat flux
+	units: W m**-2
+
+----
+
+Dataset 45
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    tropopause  int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+pt ('y', 'x')
+	long_name: Potential temperature
+	units: K
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+t ('y', 'x')
+	long_name: Temperature
+	units: K
+	standard_name: air_temperature
+
+u ('y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+vwsh ('y', 'x')
+	long_name: Vertical speed shear
+	units: s**-1
+
+----
+
+Dataset 46
+
+Coordinates:
+    time        datetime64[ns] 2019-06-15
+    step        timedelta64[ns] 21:00:00
+    level       int64 0
+    latitude    (y, x) float64 25.12 25.17 25.22 25.28 ... 45.8 45.73 45.65
+    longitude   (y, x) float64 239.3 239.5 239.7 240.0 ... 292.8 293.1 293.4
+    valid_time  datetime64[ns] 2019-06-15T21:00:00
+
+paramId_0 ('y', 'x')
+	long_name: original GRIB paramId: 0
+	units: 1
+
+pres ('y', 'x')
+	long_name: Pressure
+	units: Pa
+
+u ('y', 'x')
+	long_name: U component of wind
+	units: m s**-1
+	standard_name: eastward_wind
+
+v ('y', 'x')
+	long_name: V component of wind
+	units: m s**-1
+	standard_name: northward_wind
+
+gh ('y', 'x')
+	long_name: Geopotential Height
+	units: gpm
+	standard_name: geopotential_height
+
+pwat ('y', 'x')
+	long_name: Precipitable water
+	units: kg m**-2
+
+lcc ('y', 'x')
+	long_name: Low cloud cover
+	units: %
+
+mcc ('y', 'x')
+	long_name: Medium cloud cover
+	units: %
+
+hcc ('y', 'x')
+	long_name: High cloud cover
+	units: %
+
+tcc ('y', 'x')
+	long_name: Total Cloud Cover
+	units: %
+
+mconv ('y', 'x')
+	long_name: Horizontal moisture convergence
+	units: kg kg**-1 s**-1
+
+tcolr ('y', 'x')
+	long_name: Total column integrated rain
+	units: kg m**-2
+
+tcols ('y', 'x')
+	long_name: Total column integrated snow
+	units: kg m**-2
+
+cdlyr ('y', 'x')
+	long_name: Non-convective cloud cover
+	units: %
+
+tcolw ('y', 'x')
+	long_name: Total column-integrated cloud water
+	units: kg m**-2
+
+tcoli ('y', 'x')
+	long_name: Total column-integrated cloud ice
+	units: kg m**-2
+
+tcolc ('y', 'x')
+	long_name: Total column-integrated condensate
+	units: kg m**-2
+
+veril ('y', 'x')
+	long_name: Vertically-integrated liquid
+	units: kg m**-1
+
+lrghr ('y', 'x')
+	long_name: Large Scale Condensate Heating rate
+	units: K s**-1
+
+tclsw ('y', 'x')
+	long_name: Total column-integrated supercooled liquid water
+	units: kg m**-2
+
+tcolm ('y', 'x')
+	long_name: Total column-integrated melting ice
+	units: kg m**-2
+
+swhr ('y', 'x')
+	long_name: Solar Radiative Heating Rate
+	units: K s**-1
+
+lwhr ('y', 'x')
+	long_name: Long-Wave Radiative Heating Rate
+	units: K s**-1
+
+refzr ('y', 'x')
+	long_name: Derived radar reflectivity backscatter from rain
+	units: mm**6 m**-3
+
+refzi ('y', 'x')
+	long_name: Derived radar reflectivity backscatter from ice
+	units: mm**6 m**-3
+
+refc ('y', 'x')
+	long_name: Maximum/Composite radar reflectivity
+	units: dB
+
+VRATE ('y', 'x')
+	long_name: Ventilation Rate
+	units: m**2 s**-1
+
+----
+
