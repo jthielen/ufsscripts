@@ -3,9 +3,9 @@ channels:
         - conda-forge
 dependencies:
         - python=3.7
-        - f90nml=1.1.2
-        - jinja2=2.11
-        - pyyaml=5.1.2
+        - f90nml
+        - jinja2
+        - pyyaml
         - scipy
         - matplotlib
         - scipy
@@ -26,8 +26,5 @@ dependencies:
         - dask
         - arm_pyart
         - ipykernel
-        - black
-        - isort
-        - pip
-        - pip:
-                git+https://github.com/Unidata/MetPy.git@master
+        - metpy
+
