@@ -29,9 +29,10 @@ from lib.plots import (
 from lib.vendor.xarray import _infer_interval_breaks
 
 import matplotlib.pyplot as plt
-
 import numpy as np
+import xarray as xr
 
+from metpy.units import units
 
 # Command line arguments
 parser = create_parser("Simple plot of composite reflectivity")
@@ -72,11 +73,20 @@ add_optional_argument(
 args = get_args(parser)
 
 # Get the data
-datasets = open_datasets(config["upp_filepath_template"], collection="dawp", **args)
-refl = metpy_parse_variable(search_variable_unique(
-    datasets,
-    attributes={"long_name": "Maximum/Composite radar reflectivity"}
-))
+#datasets = open_datasets(config["upp_filepath_template"], collection="dawp", **args)
+#refl = metpy_parse_variable(search_variable_unique(
+#    datasets,
+#    attributes={"long_name": "Maximum/Composite radar reflectivity"}
+#))
+ds = xr.open_dataset(
+    config["upp_filepath_template"].format(collection='dawp', **args),
+    engine='cfgrib',
+    backend_kwargs={
+        'indexpath': '',
+        'filter_by_keys': {'typeOfLevel': 'unknown', 'stepType': 'instant'}
+    }
+)
+refl = metpy_parse_variable(ds['refc'])
 
 # Mask out low values
 refl.data[refl.data < 0] = np.nan

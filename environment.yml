@@ -17,12 +17,11 @@ dependencies:
         - pandas
         - pyproj
         - cartopy
-        - geopandas
         - cfgrib
-        - pynio
         - tqdm
-        - wrf-python
         - sparse
+        - eccodes
+        - python-eccodes
         - dask
         - arm_pyart
         - ipykernel

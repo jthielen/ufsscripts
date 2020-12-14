@@ -10,11 +10,15 @@ Shared GRIB Handling Utils
 import re
 
 import cfgrib
+from metpy.units import units
 
  
 def open_datasets(filepath_template, **kwargs):
     """Open collection of datasets from grib file defined by template and args."""
-    return cfgrib.open_datasets(filepath_template.format(**kwargs))
+    return cfgrib.open_datasets(
+        filepath_template.format(**kwargs),
+        backend_kwargs={'indexpath': ''}
+    )
 
 
 def search_variable_all(datasets, attributes=None, coords=None):
@@ -94,4 +98,4 @@ def metpy_parse_variable(da):
             da.attrs["GRIB_Latin1InDegrees"],
             da.attrs["GRIB_Latin2InDegrees"]
         )
-    ).metpy.assign_y_x()
+    ).metpy.assign_y_x(tolerance=5 * units.km)
